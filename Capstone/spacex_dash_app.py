@@ -59,7 +59,7 @@ def get_pie_chart(entered_site):
         title='Successful Launches - All sites')
     
     else:
-        site_data= spacex_df[spacex_df["Launch Site"] == 'CCAFS LC-40'].groupby("class").count().reset_index()
+        site_data= spacex_df[spacex_df["Launch Site"] == entered_site].groupby("class").count().reset_index()
         fig = px.pie(site_data, values='Flight Number', 
         names='class',
         title='Successful Launches')
